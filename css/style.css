@@ -3,17 +3,12 @@ body {
     color: #fff;
 }
 
-.secHero {
-    width: 100%;
-    height: 600px;
-    background-image: url(../img/TaipeiCity.jpg);
-    background-position: center;
-    background-size: cover;
-}
+/* Navbar */
 
 .navbar {
     background-color: #fff;
     width: 100%;
+    height: 72px;
     -webkit-box-shadow: 0 1px 1px rgba(255,255,255,0.25);
     box-shadow: 0 1px 1px rgba(255,255,255,0.25);
     display: flex;
@@ -30,6 +25,8 @@ body {
 
 .navbar .navbar-logo {
     padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .navbar .navbar-logo img {
@@ -68,12 +65,66 @@ body {
     transform: scale(1.15);
 }
 
+.navbar .navbar-toggle {
+    display: none;
+}
+
+.navbar .navbar-toggle a {
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 760px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar .navbar-content {
+        display: none;
+    }
+
+    .navbar .navbar-content.toggle {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .navbar .navbar-toggle {
+        display: block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        font-size: 32px;
+    }
+
+    .navbar .navbar-content a:active {
+        transform: none;
+    }
+}
+
+
+/* Section */
 .section {
     width: 100%;
 }
 
-.secAbout {
+.section-hero {
+    height: calc(100vh - 72px);
+    background-image: url(../img/TaipeiCity.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.section-about {
+    margin-top: 72px;
     height: 600px;
+}
+
+.section:not(.fill) .inner {
+    margin: 0 60px;
+    padding: 24px 0;
 }
 
 .section .inner .contents {
@@ -93,6 +144,7 @@ body {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     margin: 6px;
+    cursor: pointer;
 }
 
 .section .inner .contents .card .card-inner {
@@ -105,28 +157,47 @@ body {
     flex-direction: column;
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
     transition: all .2s ease-in-out;
-  }
-  
-  .section .inner .contents .card .card-inner:active {
+}
+
+.section .inner .contents .card .card-inner:active {
     transform: scale(1.15);
-  }
-  
-  .section .inner .contents .card .card-inner .card-background {
+}
+ 
+.section .inner .contents .card .card-inner .card-background {
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
+}
+
+.section .inner .contents .card .card-inner .card-background .card-background-inner {
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-  }
+}
   
-  .section .inner .contents .card .card-inner .card-title {
-    margin-top: 100px;
-  }
+.section .inner .contents .card .card-inner .card-title {
+    margin-top: 80px;
+}
   
-  .section .inner .contents .card .card-inner .card-title h1 {
+.section .inner .contents .card .card-inner .card-title h1 {
     margin: 0;
     font-size: 24px;
     font-weight: 700;
     filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.85));
-  }
+}
+
+.section .inner .contents .card .card-inner .card-title h1 span {
+    display: none;
+}
+
+.section .inner .contents .card .card-inner .card-content {
+    display: none;
+}
+
+@media screen and (max-width: 760px) {
+    .section:not(.fill) .inner {
+        margin: 0 15px;
+    }
+}
