@@ -24,6 +24,9 @@ window.addEventListener('DOMContentLoaded', function() {
         navbarButtons.forEach(function(element) {
             element.addEventListener('click', function(e) {
                 e.preventDefault()
+                var targetName = element.getAttribute('href').replace('#','')
+                var anchor = document.querySelector('a[name="' + targetName + '"]')
+                anchor.scrollIntoView({behavior:'smooth', block:'start'})
             })
         })
 
@@ -33,7 +36,7 @@ window.addEventListener('DOMContentLoaded', function() {
             } else {
                 element.classList.remove('sticky')
             }
-        }, 1000 / 15))
+        }, 1000 / 8))
 
         window.dispatchEvent(new Event('scroll'))
     })
@@ -57,13 +60,14 @@ window.addEventListener('DOMContentLoaded', function() {
                 var cln = node.cloneNode(true)
                 modalContent.appendChild(cln)
             })
-            
 
             modal.classList.add('open')
+            modal.style.animation = 'show 0.2s ease-out 0s 1 normal forwards'
         })
     })
 
     modal.addEventListener('click', function(e) {
+        modal.style.animation = 'show 0.2s ease-out 0s 1 reverse forwards'
         modal.classList.remove('open')
     })
 })
