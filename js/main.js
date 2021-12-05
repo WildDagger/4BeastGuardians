@@ -1,7 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelectorAll('.navbar')
-    //const navbarcontent = document.querySelector('.navbar .navbar-content')
-    //const navbarbutton = document.querySelector('.navbar .navbar-button')
     const cards = document.querySelectorAll('.section .inner .contents .card')
     const modal = document.getElementById('modal')
     const modalIcon = modal.querySelector('.modal-icon-inner')
@@ -9,6 +7,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const modalContent = modal.querySelector('.modal-content')
 
     navbar.forEach(function(element) {
+        var elemTop = element.offsetTop
         var navbarContent = element.querySelectorAll('.navbar-content')
         var navbarToggleButton = element.querySelectorAll('.navbar-toggle a')
         var navbarButtons = element.querySelectorAll('.navbar-content a')
@@ -27,8 +26,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 e.preventDefault()
             })
         })
-        
-        var elemTop = element.offsetTop
 
         window.addEventListener('scroll', throttle(function() {
             if (window.scrollY > elemTop) {
@@ -69,11 +66,6 @@ window.addEventListener('DOMContentLoaded', function() {
     modal.addEventListener('click', function(e) {
         modal.classList.remove('open')
     })
-
-    /*navbarbutton.addEventListener('on', function(e) {
-        e.preventDefault()
-        navbarcontent.classList.toggle('toggle')
-    })*/
 })
 
 function throttle(fn, wait) {

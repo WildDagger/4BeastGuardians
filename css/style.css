@@ -13,7 +13,7 @@ body {
     box-shadow: 0 1px 1px rgba(255,255,255,0.25);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     position: absolute;
     z-index: 10;
 }
@@ -21,9 +21,14 @@ body {
 .navbar.sticky {
     position: fixed;
     top: 0;
+    justify-content: space-between;
 }
 
 .navbar .navbar-logo {
+    display: none;
+}
+
+.navbar.sticky .navbar-logo {
     padding: 10px;
     display: flex;
     align-items: center;
@@ -37,6 +42,9 @@ body {
 .navbar .navbar-content {
     display: flex;
     flex-direction: row;
+}
+
+.navbar.sticky .navbar-content {
     padding-right: 10px;
 }
 
@@ -115,6 +123,19 @@ body {
     background-image: url(../img/TaipeiCity.jpg);
     background-position: center;
     background-size: cover;
+}
+
+.section-hero .logo {
+    position: absolute;
+    bottom: 120px;
+    left: calc(50% - 500px /2);
+    width: 500px;
+    filter: drop-shadow(5px 5px 15px rgba(170,180,200,0.25));
+}
+
+.section-hero .logo img {
+    width: 100%;
+    height: auto;
 }
 
 .section-about {
