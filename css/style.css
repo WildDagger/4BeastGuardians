@@ -244,15 +244,8 @@ body {
 .section .inner .contents .card .card-inner .card-title {
     margin-top: 80px;
 }
-  
-.section .inner .contents .card .card-inner .card-title h1 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 700;
-    filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.85));
-}
 
-.section .inner .contents .card .card-inner .card-title h1 span {
+.section .inner .contents .card .card-inner .card-title h1 {
     display: none;
 }
 
