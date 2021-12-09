@@ -113,6 +113,74 @@ body {
     }
 }
 
+/* Section Divider */
+.divider {
+    width: 100%;
+}
+
+.divider .inner {
+    position: relative;
+}
+
+.custom-shape-divider-top-1639033507 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1639033507 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1639033507 .shape-fill {
+    fill: #004DA1;
+}
+
+.custom-shape-divider-top-1639034080 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1639034080 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1639034080 .shape-fill {
+    fill: #E50011;
+}
+
+.custom-shape-divider-top-1639034222 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1639034222 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1639034222 .shape-fill {
+    fill: #44B034;
+}
 
 /* Section */
 .section {
@@ -155,19 +223,18 @@ body {
 .section-about {
     margin-top: 72px;
     height: 100vh;
-    
-    background-image: url(../img/noise.png);
-    background-position: center;
-    background-size: cover;
 
     display: flex;
     justify-content:center;
     align-items:center;
+
+    background-color: #004da1;
 }
 
 
 .section-chara, .section-mecha, .section-story {
     min-height: 100vh;
+    margin-top: 150px;
 }
 
 .section:not(.fill) .inner {
@@ -184,8 +251,38 @@ body {
 
 .section-about .inner .pic {
     position: absolute;
-    right: 40px;
-    bottom: -300px;
+    right: 80px;
+    bottom: -250px;
+    z-index: 8;
+}
+
+.section-about .inner .about-content {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 100%;
+    width: 100%;
+    
+    text-align: center;
+}
+
+.section-about .inner .about-content p {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    line-height: 24px;
+    font-size: 18px;
+}
+
+.section-chara {
+    background-color: #E50011;
+}
+
+.section-mecha {
+    background-color: #44b034;
+}
+
+.section-story {
+    background-color: #ffe100;
 }
 
 .section .inner .contents {
