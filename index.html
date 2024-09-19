@@ -1,234 +1,211 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>四獸戰將</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>四獸勇者 真武帝</title>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link href="css/normalize.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-        <header class="section fill section-hero">
-          <div class="background"></div>
-          <div class="inner"></div>
-          <div class="logo">
-            <img src="img/logo.png">
-          </div>
+        <header>
+            <nav id="menuHeader">
+                <div class="container">
+                    <div id="mobileMenu" class="nav-menu-mobile nav-menu-selection">
+                        <a href="#sectionIntro">簡介</a>
+                        <a href="#sectionStory">故事</a>
+                        <a href="#sectionChara">角色</a>
+                        <a href="#sectionMecha">機械</a>
+                        <a href="#sectionGEO">GEO</a>
+                    </div>
+                    <div id="brandLogo">
+                        <a href="#"><img src="img/Logo/Logo_02.png"></a>
+                    </div>
+                    <div id="menu" class="nav-menu nav-menu-selection">
+                        <a href="#sectionIntro">簡介</a>
+                        <a href="#sectionStory">故事</a>
+                        <a href="#sectionChara">角色</a>
+                        <a href="#sectionMecha">機械</a>
+                        <a href="#sectionGEO">GEO</a>
+                    </div>
+    
+                    <div class="nav-menu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                            <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+                          </svg>
+                          
+                    </div>
+                </div>
+            </nav>
+            <div id="sectionHero">
+                <img src="img/HeroSection/HeroSection_01.jpg">
+                <img src="img/HeroSection/HeroSection_02_XuanwuKaiser.png" class="mecha xuanwu-kaiser">
+                <img src="img/HeroSection/HeroSection_03_BluePanthar.png" class="chara blue-panthar">
+                <img src="img/HeroSection/HeroSection_04_GreenElephant.png" class="chara green-elephant">
+                <img src="img/HeroSection/HeroSection_05_OrangeTiger.png" class="chara orange-tiger">
+                <img src="img/HeroSection/HeroSection_06_RedLion.png" class="chara red-lion">
+                <img src="img/Logo/Logo_01.png" class="logo">
+                <div class="catch-copy">
+                    <img src="img/HeroSection/Catch Copy_zh-tw.png">
+                </div>
+            </div>
         </header>
-        <nav class="navbar" role="navigation">
-            <div class="navbar-logo">
-                <img src="img/logo.png">
-            </div>
-            <div class="navbar-content">
-                <a href="#about"><span>關於</span></a>
-                <a href="#chara"><span>角色</span></a>
-                <a href="#mecha"><span>機械</span></a>
-                <a href="#story"><span>故事</span></a>
-            </div>
-            <div class="navbar-toggle">
-              <a href="#"><ion-icon name="menu-outline"></ion-icon></a>
-            </div>
-        </nav>
-        <section class="section section-about fill">
-            <a name="about"></a>
-            <div class="inner">
-                <div class="about-content">
-                  <div>
-                    <p>西元2022年。<br>歷經各種災厄，人類終於看見希望的曙光。<br>然而這只是世界即將面臨更大危機的預兆而已——</p>
-                    <p>自古被封印在地球的天魔薩西歐再次甦醒，<br>意圖「統治」這座星球。</p>
-                    <p>為了阻止薩西歐的企圖，<br>古代文明留下的守護裝置選上了四名少年，<br>成為守護世界的四獸勇者——</p>
-                  </div>
+        <main>
+            <section id="sectionIntro" class="main-section">
+                <div id="intro" class="frame container">
+                    <p>這座城市，是能夠實現夢想的地方——</p>
+                    <p>
+                        憧憬成為英雄的少年‧劍忠。<br>
+                        想要成為漫畫家的少年‧景和。<br>
+                        為了家人想成為醫生的少年‧中正。<br>
+                        在程式設計師之路努力的少年‧文翠。
+                    </p>
+                    <p>
+                        四名各有各的夢想的小學生遇上了沒有「夢想」的少年。<br>
+                        還有突然出現在這座城市，以人們的夢想為糧食誕生的巨大怪獸。<br>
+                        為了守護城市，他們在神秘聲音的引導下成為了保護城市的英雄——
+                    </p>
+                    <p>「夢想之力全開！我們的夢想正在發光發熱！」</p>
                 </div>
-                <div class="pic">
-                  <img src="img/about/Zhengwudi_1.png">
-                </div>
-            </div>
-        </section>
-        <section class="section section-chara">
-          <a name="chara"></a>
-          <div class="inner">
-            <h1><img src="img/Title_Chara.png"></h1>
-                <div class="contents">
-                    <div class="card">
-                      <div class="card-inner">
-                          <div class="card-background">
-                            <div class="card-background-inner" style="background-image: url(img/chara/Jianzhong_1.png);"></div>
-                          </div>
-                          <div class="card-title">
-                            <h1>施劍忠<span>Jianzhong Shi</span></h1>
-                          </div>
-                          <div class="card-content">
-                            <p>「烈焰獅」的駕駛者，熱血個性，有時熱衷起來會聽不到旁人講話，但對沒興趣的事情往往會想辦法推拖拉。</p>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-inner">
-                          <div class="card-background">
-                            <div class="card-background-inner" style="background-image: url(img/chara/Jinghe_1.png);"></div>
-                          </div>
-                          <div class="card-title">
-                            <h1>胡景和<span>Jinghe Hu</span></h1>
-                          </div>
-                          <div class="card-content">
-                            <p>「金剛虎」的駕駛者，個性隨和，觀察力敏銳。</p>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-inner">
-                          <div class="card-background">
-                            <div class="card-background-inner" style="background-image: url(img/chara/Zhongzheng_1.png);"></div>
-                          </div>
-                          <div class="card-title">
-                            <h1>項中正<span>Zhongzheng Xiang</span></h1>
-                          </div>
-                          <div class="card-content">
-                            <p>「風暴象」的駕駛者。隊中最有大哥風範的人，也是隊中的司令官。</p>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-inner">
-                          <div class="card-background">
-                            <div class="card-background-inner" style="background-image: url(img/chara/Wencui_1.png);"></div>
-                          </div>
-                          <div class="card-title">
-                            <h1>包文翠<span>Wencui Bao</span></h1>
-                          </div>
-                          <div class="card-content">
-                            <p>「洪流豹」的駕駛者，學者個性，也是四人中知識最淵博的人，不過卻有點喜歡幻想。</p>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-inner">
-                          <div class="card-background">
-                            <div class="card-background-inner" style="background-image: url(img/chara/Tudigong_1.png);"></div>
-                          </div>
-                          <div class="card-title">
-                            <h1>「土地公」<span>Tudigong</span></h1>
-                          </div>
-                          <div class="card-content">
-                            <p>選中四人駕駛四獸機組的青年，平常待在四獸山中的某個現代人類無法偵測到的次元空間內(文翠稱呼為結界)。</p>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-inner">
-                          <div class="card-background">
-                            <div class="card-background-inner"></div>
-                          </div>
-                          <div class="card-title">
-                            <h1>林永晴<span>Yongqing Lin</span></h1>
-                          </div>
-                          <div class="card-content">
-                            <p>住在劍忠家隔壁的少女(兩家只隔一面牆)。</p>
-                            <p>雖然跟劍忠等人同樣都是小學5年級，但已經在經營影片頻道，主要是做遊戲實況和旅遊記事。</p>
-                            <p>和劍忠兩人從幼稚園開始就讀同一間幼稚園，還一路同班到5年級現在，關係已經是好朋友甚至是家人的程度，而且還經常把同樣喜歡玩遊戲的劍忠拉來做遊戲實況(因為技巧上劍忠比較強所以往往是劍忠操作她邊實況邊吐槽)。</p>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-inner">
-                          <div class="card-background">
-                            <div class="card-background-inner" style="background-image: url(img/chara/Ahriman_1.png);"></div>
-                          </div>
-                          <div class="card-title">
-                            <h1>阿里曼<span>Ahriman</span></h1>
-                          </div>
-                          <div class="card-content">
-                            <p>天魔薩西歐麾下的女性幹部，喜怒非常明顯，個性唯我獨尊，經常說些空泛的話和目標。</p>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-inner">
-                        <div class="card-background">
-                          <div class="card-background-inner" style="background-image: url(img/chara/Balor_1.png);"></div>
-                        </div>
-                        <div class="card-title">
-                          <h1>巴洛爾<span>Balor</span></h1>
-                        </div>
-                        <div class="card-content">
-                          <p>天魔薩西歐麾下擁有一身蠻力的青年，平常都用面具掩蓋著自己的面目，沒有人知道底下是什麼樣子。</p>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="card">
-                      <div class="card-inner">
-                        <div class="card-background">
-                          <div class="card-background-inner" style="background-image: url(img/chara/Camazotz_1.png);"></div>
-                        </div>
-                        <div class="card-title">
-                          <h1>卡馬佐<span>Camazotz</span></h1>
-                        </div>
-                        <div class="card-content">
-                          <p>天魔薩西歐麾下看上去禿頭的中年男子，身形有點臃腫，不過臉上表情相當可怕。</p>
-                          <p>為了阿里曼的目標經常造出一些道具，或者是讓怪獸有更多特殊能力，是個不可小覷的瘋狂科學家。</p>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
-        </section>
-        <section class="section section-mecha">
-            <a name="mecha"></a>
-            <div class="inner">
-                <h1><img src="img/Title_Mecha.png"></h1>
-                <div class="contents">
-                    <div class="card">
-                        <div class="card-inner">
-                          <div class="card-background">
-                            <div class="card-background-inner" style="background-image: url(img/mecha/zhengwudi.png);"></div>
-                          </div>
-                          <div class="card-title">
-                            <h1>真武帝<span>Zhengwudi</span></h1>
-                          </div>
-                          <div class="card-content">
-                            <p>全高：35m</p>
-                            <p>由封印在四獸山中的四架獸型機體：烈焰獅、金剛虎、風暴象、洪流豹四架機體合體而成的巨型機器人。</p>
-                            <p>上古時代來自外星的沙納薩人為了協助地球人對抗襲擊地球的天魔薩西歐，因而給予了這架機體，最終也成功將薩西歐封印在台北盆地的結界內。</p>
-                          </div>
-                        </div>
+            </section>
+            <section id="sectionStory" class="main-section content-section">
+                <div class="container">
+                    <h1>故事<span>Story</span></h1>
+                    <div class="frame">
+                        <p class="coming-soon">Coming Soon</p>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!--
-        <section class="section section-story">
-            <a name="story"></a>
-            <div class="inner">
-                <h1><img src="img/Title_Story.png"></h1>
-                <div class="contents">
-                    <div class="card">
-                        <div class="card-inner">
-                          <div class="card-background">
-                            <div class="card-background-inner"></div>
-                          </div>
-                          <div class="card-title">
-                            <h1>標題<span></span></h1>
-                          </div>
-                          <div class="card-content"></div>
-                        </div>
-                    </div>
+            </section>
+            <section id="sectionChara" class="main-section content-section">
+                <div class="container">
+                    <h1>角色<span>Character</span></h1>
+                    <ul class="list">
+                        <li class="cell">
+                            <img class="cell-img" src="img/Chara/Chara_01_Jianzhong_Icon.png">
+                            <div class="cell-title">施劍忠</div>
+                            <div class="cell-content" title="施劍忠 (紅獅戰將)">
+                                <p>烈焰獅的駕駛者兼玄武王的主駕駛，憧憬成為英雄的熱血少年。</p>
+                            </div>
+                        </li>
+                        <li class="cell">
+                            <img class="cell-img" src="img/Chara/Chara_02_Jinghe_Icon.png">
+                            <div class="cell-title">胡景和</div>
+                            <div class="cell-content" title="胡景和 (橘虎戰將)">
+                                <p>金剛虎的駕駛者兼玄武王的武裝調整，個性隨和，想成為漫畫家的少年。</p>
+                            </div>
+                        </li>
+                        <li class="cell">
+                            <img class="cell-img" src="img/Chara/Chara_03_Zhongzheng_Icon.png">
+                            <div class="cell-title">項中正</div>
+                            <div class="cell-content" title="項中正 (綠象戰將)">
+                                <p>風暴象的駕駛者兼全隊狀態管理擔當，最會照顧人但也很行動派，為了家人期望能成為醫生的少年。</p>
+                            </div>
+                        </li>
+                        <li class="cell">
+                            <img class="cell-img" src="img/Chara/Chara_04_Wencui_Icon.png">
+                            <div class="cell-title">包文翠</div>
+                            <div class="cell-content" title="包文翠 (青豹戰將)">
+                                <p>洪流豹的駕駛者兼玄武王的機體狀態管理擔當，四人中知識最淵博，正在程式設計師之路努力的少年。</p>
+                            </div>
+                        </li>
+                        <li class="cell">
+                            <img class="cell-img" src="img/Chara/Chara_05_Tudigong_Icon.png">
+                            <div class="cell-title">土地公</div>
+                            <div class="cell-content" title="土地公">
+                                <p>擁有不可思議的「夢想之力」，並選中四人駕駛四獸機組的神秘青年。</p>
+                            </div>
+                        </li>
+                        <li class="cell">
+                            <img class="cell-img" src="img/Chara/Chara_06_Shixin_Icon.png">
+                            <div class="cell-title">英士新</div>
+                            <div class="cell-content" title="英士新">
+                                <p>開學後突然轉學與四人同班的神秘少年。</p>
+                            </div>
+                        </li>
+                        <li class="cell">
+                            <img class="cell-img" src="img/Chara/Chara_07_Yongqing_Icon.png">
+                            <div class="cell-title">林永晴</div>
+                            <div class="cell-content" title="林永晴">
+                                <p>劍忠的鄰居兼同班同學，同時也是VTuber「<ruby>紫雲哈雷<rp>(</rp><rt>Shiun Halley</rt><rp>)</rp></ruby>」的中之人。</p>
+                            </div>
+                        </li>
+                        <li class="cell hidden"></li>
+                    </ul>
+                </div>
+            </section>
+            <section id="sectionMecha" class="main-section content-section">
+                <div class="container">
+                    <h1>機械<span>Mechanic</span></h1>
+                    <ul class="list">
+                        <li class="cell">
+                            <img class="cell-img" src="img/Mecha/Mecha_01_XuanwuKaiser_Icon.png">
+                            <div class="cell-title">玄武王</div>
+                            <div class="cell-content" title="玄武王">
+                                <p>從劍忠的夢中誕生，並藉由土地公給予的夢想之力而得以實體化，作為這座城市中所有夢想的守護者，與侵襲城市的惡夢獸戰鬥的巨大機器人。</p>
+                                <p>組成機組：烈焰獅、金剛虎、風暴象、洪流豹</p>
+                            </div>
+                        </li>
+                        <li class="cell hidden"></li>
+                    </ul>
+                </div>
+            </section>
+            <section id="sectionGEO" class="main-section content-section">
+                <div class="container">
+                    <h1>GEO<span>Green Earth Organization</span></h1>
+                    <p>企圖利用「夢想之力」征服地球的神秘組織。</p>
+                    <ul class="list">
+                        <li class="cell">
+                            <img class="cell-img" src="img/Chara/Chara_00_Figure_Icon.png">
+                            <div class="cell-title">絲普林</div>
+                            <div class="cell-content" title="絲普林">
+                                <p>翠綠地球組織的幹部，似乎擁有很高的權限。</p>
+                            </div>
+                        </li>
+                        <li class="cell">
+                            <img class="cell-img" src="img/Chara/Chara_00_Figure_Icon.png">
+                            <div class="cell-title">赫爾布斯特</div>
+                            <div class="cell-content" title="赫爾布斯特">
+                                <p>絲普林的部下，擅長近接戰鬥但戴著面具且沉默的青年。</p>
+                            </div>
+                        </li>
+                        <li class="cell">
+                            <img class="cell-img" src="img/Chara/Chara_00_Figure_Icon.png">
+                            <div class="cell-title">謝姆斯</div>
+                            <div class="cell-content" title="謝姆斯">
+                                <p>絲普林的部下，是名科學家。</p>
+                            </div>
+                        </li>
+                        <li class="cell">
+                            <img class="cell-img" src="img/Geo/Geo_00_NoData.png">
+                            <div class="cell-title">惡夢獸</div>
+                            <div class="cell-content" title="惡夢獸">
+                                <p>翠綠地球組織惡用夢想之力，將人類的夢想實體化出來的怪獸。</p>
+                                <p>分為怪人型態的「<ruby>克萊普托<rp>(</rp><rt>Crypto</rt><rp>)</rp></ruby>」與巨獸型態的「<ruby>范涅羅茲<rp>(</rp><rt>Phaneroz</rt><rp>)</rp></ruby>」兩種類型。</p>
+                            </div>
+                        </li>
+                        <li class="cell hidden"></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div id="sns">
+                
                 </div>
             </div>
-        </section>
-        -->
+        </footer>
         <div id="modal" class="modal">
-          <div class="modal-inner">
-            <div class="modal-icon">
-              <div class="modal-icon-inner"></div>
+            <div class="modal-body">
+                <div class="modal-content"></div>
+                <div class="modal-footer">
+                    <h1 class="modal-title">Title</h1>
+                    <button>Close</button>
+                </div>
             </div>
-            <div class="modal-header">
-            </div>
-            <div class="modal-content">
-            </div>
-          </div>
         </div>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script src="js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>
