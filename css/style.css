@@ -458,7 +458,20 @@ nav .nav-menu-icon {
 
 .modal-content {
     height: 80%;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content .cell-content-img {
+    flex: 1;
+    max-width: 200px;
+    height: auto;
+}
+
+.modal-content .cell-description {
+    flex: 1;
 }
 
 .modal-footer {
@@ -487,6 +500,14 @@ nav .nav-menu-icon {
 
 body.modal-open {
     overflow: hidden;
+}
+
+@media (min-width: 900px) {
+    .modal-content {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }
 
 /* Footer */
