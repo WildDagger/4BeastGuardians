@@ -1,3 +1,8 @@
+body {
+    background-color: #010717;
+    color: #fff;
+}
+
 /* Main */
 .container {
     max-width: 1200px;
@@ -17,6 +22,7 @@ nav#menuHeader {
     left: 0;
     right: 0;
     background-color: #fff;
+    color: #000;
     z-index: 400;
 }
 
@@ -484,6 +490,27 @@ body.modal-open {
 }
 
 /* Footer */
-footer #sns #sns-X {
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer .social-icon {
+    margin: 2em auto;
     max-width: 640px;
+    display: flex;
+}
+
+footer .social-icon .item {
+    list-style: none;
+}
+
+footer .social-icon .link {
+    display: inline-block;
+}
+
+footer .social-icon .link img {
+    width: 2em;
+    height: auto;
+    padding: 0 1em;
 }
