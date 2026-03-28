@@ -44,6 +44,10 @@ body {
     color: #fff;
 }
 
+.sns a.facebook {
+    background-color: #0165E1;
+}
+
 .sns a.instagram {
     background-color: #E1306C;
     color: #fff;
