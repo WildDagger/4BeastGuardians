@@ -1,7 +1,64 @@
-body {
-    background-color: #010717;
-    color: #fff;
+* {
+    --background-color: #010717;
+    --text-color: #fff;
+
+    --main-nav-background-color: #fff;
+    --main-nav-link-color: #0d5491;
+
+    --main-nav-link-hover-background-color: #554614;
+    --main-nav-link-hover-color: #ffffff;
 }
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+main-navbar {
+    width: 100%;
+}
+
+main-navbar::part(main) {
+    background-color: var(--main-nav-background-color);
+    padding: 0 12px;
+}
+
+nav-brand img {
+    max-width: 120px;
+    height: auto;
+}
+
+main-navbar nav-menu {
+    --nav-menu-items-gap: 0;
+}
+
+main-navbar nav-button::part(link) {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    line-height: 0;
+    
+    --nav-link-color: var(--main-nav-link-color);
+    --nav-link-hover-color: var(--main-nav-link-hover-color);
+    --nav-link-hover-background-color: var(--main-nav-link-hover-background-color);
+
+    --nav-link-icon-width: 32px;
+    --nav-link-icon-height: 32px;
+}
+
+/* .sprite.nav {
+    width: 32px;
+    height: auto;
+    display: block;
+} */
 
 .main-container {
     width: 100%;
@@ -10,11 +67,17 @@ body {
     margin: 0 0;
 }
 
-.main-poster {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 48px;
+}
+
+.coming-soon {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-transform: uppercase;
 }
 
 .sns {
