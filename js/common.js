@@ -6,4 +6,8 @@
             window.location.href = e.detail.link
         })
     })
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.dispatchEvent(new CustomEvent('loading-complete', {bubbles: true, composed: true}))
+    })
 })()

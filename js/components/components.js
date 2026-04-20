@@ -12,6 +12,40 @@
             return ["lang"]
         }
 
+        static _template = (() => {
+            const template = document.createElement('template')
+            template.innerHTML = `
+                <style>
+                    a {
+                        display: inline-flex; 
+                        align-items: center; 
+                        padding: 8px 16px;
+                        text-decoration: none;
+                        transition: all 0.3s;
+                        color: var(--nav-link-color, #00f);
+                        background-color: var(--nav-link-background-color, transparent);
+                    }
+                    
+                    a:hover {
+                        font-weight: 500;
+                        background-color: var(--nav-link-hover-background-color, transparent);
+                        color: var(--nav-link-hover-color, #f00);
+                    }
+
+                    ::slotted(svg) {
+                        display: block;
+                        width: var(--nav-link-icon-width);
+                        height: var(--nav-link-icon-height);
+                        flex-shrink: 0;
+                    }
+                </style>
+                <a part="link">
+                    <slot></slot>
+                </a>
+            `
+            return template
+        })()
+
         connectedCallback() {
             this.attachShadow({mode: "open"})
             this._render(
@@ -47,79 +81,74 @@
             if (!this.shadowRoot) {
                 this.attachShadow({mode: "open"})
             }
-            this.shadowRoot.innerHTML = `
-                <style>
-                    a {
-                        display: inline-flex; 
-                        align-items: center; 
-                        padding: 8px 16px;
-                        text-decoration: none;
-                        transition: all 0.3s;
-                        color: var(--nav-link-color, #00f);
-                        background-color: var(--nav-link-background-color, transparent);
-                    }
-                    
-                    a:hover {
-                        font-weight: 500;
-                        background-color: var(--nav-link-hover-background-color, transparent);
-                        color: var(--nav-link-hover-color, #f00);
-                    }
+            this.shadowRoot.appendChild(NavButton._template.content.cloneNode(true))
 
-                    ::slotted(svg) {
-                        display: block;
-                        width: var(--nav-link-icon-width);
-                        height: var(--nav-link-icon-height);
-                        flex-shrink: 0;
-                    }
-                </style>
-                <a part="link" href="${link}" target="${target}">
-                    <slot></slot>
-                </a>
-            `
+            const elementLink = this.shadowRoot.querySelector('a')
+            if (elementLink) {
+                elementLink.setAttribute('href', link)
+                elementLink.setAttribute('target', target)
 
-            this.shadowRoot.querySelector('a')?.addEventListener('click', (e) => {
-                e.preventDefault()
-            })
+                elementLink.addEventListener('click', (e) => {
+                    e.preventDefault()
+                })
+            }
         }
     }
 
     class NavDropdown extends HTMLElement {
+        static _template = (() => {
+            const template = document.createElement('template')
+            template.innerHTML = `
+                <style>
+                    .trigger { cursor: pointer; }
+                    .items {
+                    display: none;
+                    position: absolute;
+                    background: white;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                    border-radius: 8px;
+                    padding: 4px 0;
+                    min-width: 160px;
+                    }
+                    :host([open]) .items { display: block; }
+                </style>
+                <div class="trigger">
+                    <slot name="trigger"></slot>
+                </div>
+                <div class="items">
+                    <slot></slot>
+                </div>
+            `
+            return template
+        })()
+
         connectedCallback() {
             this.attachShadow({ mode: 'open' });
-            this.shadowRoot.innerHTML = `
-            <style>
-                .trigger { cursor: pointer; }
-                .items {
-                display: none;
-                position: absolute;
-                background: white;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-                border-radius: 8px;
-                padding: 4px 0;
-                min-width: 160px;
-                }
-                :host([open]) .items { display: block; }
-            </style>
-            <div class="trigger">
-                <slot name="trigger"></slot>
-            </div>
-            <div class="items">
-                <slot></slot>
-            </div>
-            `;
+            this.shadowRoot.appendChild(NavDropdown._template.content.cloneNode(true))
 
-            this.shadowRoot.querySelector('.trigger')
-            .addEventListener('click', () => this.toggleAttribute('open'));
+            this.shadowRoot.querySelector('.trigger')?.addEventListener('click', () => this.toggleAttribute('open'));
         }
     }
 
     class NavDropdownItem extends NavButton {
-        _render(link, target) {
-            this.shadowRoot.innerHTML = `
-                <a part="link" href="${link}" target="${target}" role="menuitem">
+        static _template = (() => {
+            const template = document.createElement('template')
+            template.innerHTML = `
+                <a part="link" role="menuitem">
                     <slot></slot>
                 </a>
             `
+            return template
+        })
+
+        _render(link, target) {
+            this.shadowRoot.appendChild(NavDropdownItem._template.content.cloneNode(true))
+
+            const elementLink = this.shadowRoot.querySelector('a')
+            if (elementLink) {
+                elementLink.setAttribute('href', link)
+                elementLink.setAttribute('target', target)
+            }
         }
     }
 
@@ -128,9 +157,9 @@
             return ["lang"]
         }
 
-        connectedCallback() {
-            this.attachShadow({ mode: 'open' });
-            this.shadowRoot.innerHTML = `
+        static _template = (() => {
+            const template = document.createElement('template')
+            template.innerHTML = `
                 <style>
                     .menu {
                         display: flex;
@@ -168,13 +197,19 @@
                     </div>
                 </div>
             `
+            return template
+        })()
 
-            this.shadowRoot.querySelector('.hamburger').addEventListener('click', () => this.#toggleOpen())
+        connectedCallback() {
+            this.attachShadow({ mode: 'open' });
+            this.shadowRoot.appendChild(NavMenu._template.content.cloneNode(true))
+
+            this.shadowRoot.querySelector('.hamburger')?.addEventListener('click', () => this.#toggleOpen())
         }
         
         #toggleOpen() {
             const isOpen = this.toggleAttribute('open')
-            this.shadowRoot.querySelector('.hamburger').setAttribute('aria-expanded', isOpen)
+            this.shadowRoot.querySelector('.hamburger')?.setAttribute('aria-expanded', isOpen)
         }
     }
 
@@ -183,15 +218,21 @@
             return ["lang"]
         }
 
-        connectedCallback() {
-            this.attachShadow({ mode: 'open' });
-            this.shadowRoot.innerHTML = `
+        static _template = (() => {
+            const template = document.createElement('template')
+            template.innerHTML = `
                 <style>
                 </style>
                 <div class="nav-brand">
                     <slot></slot>
                 </div>
             `
+            return template
+        })()
+
+        connectedCallback() {
+            this.attachShadow({ mode: 'open' });
+            this.shadowRoot.appendChild(NavBrand._template.content.cloneNode(true))
         }
     }
 
@@ -205,6 +246,30 @@
         static get observedAttributes() {
             return ["lang"]
         }
+
+        static _template = (() => {
+            const template = document.createElement('template')
+            template.innerHTML = `
+                <style>
+                    nav {
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        position: fixed;
+                        height: 48px;
+                        padding: 6px 12px;
+                        width: calc(100% - 24px);
+                    }
+                    nav-menu {
+                        margin-left: auto;
+                    }
+                </style>
+                <nav part="main">
+                    <slot></slot>
+                </nav>
+            `
+            return template
+        })()
 
         connectedCallback() {
             this.attachShadow({ mode: 'open' });
@@ -227,25 +292,10 @@
         }
 
         _render(layout) {
-            this.shadowRoot.innerHTML = `
-                <style>
-                    nav {
-                        display: flex;
-                        align-items: center;
-                        gap: 16px;
-                        position: fixed;
-                        height: 48px;
-                        padding: 6px 12px;
-                        width: calc(100% - 24px);
-                    }
-                    nav-menu {
-                        margin-left: auto;
-                    }
-                </style>
-                <nav part="main" style="justify-content: ${layout}">
-                    <slot></slot>
-                </nav>
-            `;
+            this.shadowRoot.appendChild(MainNavbar._template.content.cloneNode(true))
+            console.log(this.shadowRoot.querySelector('nav'))
+
+            this.shadowRoot.querySelector('nav')?.setAttribute('style', `justify-content: ${layout};`)
         }
 
         disconnectedCallback() {
@@ -278,6 +328,32 @@
         static get observedAttributes() {
             return ["lang"]
         }
+
+        static _template = (() => {
+            const template = document.createElement('template')
+            template.innerHTML = `
+                <style>
+                    a {
+                        text-decoration: none;
+                        transition: all 0.3s;
+                        display: inline-block;
+                        padding: 8px 16px;
+                        color: var(--button-link-color, #000);
+                        border: 2px solid var(--button-link-border-color, #fff);
+                        border-radius: 8px;
+                    }
+                    
+                    a:hover {
+                        background-color: var(--button-link-hover-bg, #fff);
+                        color: var(--button-link-hover-color, #000);
+                    }
+                </style>
+                <a part="link">
+                    <slot></slot>
+                </a>
+            `
+            return template
+        })()
 
         connectedCallback() {
             this.attachShadow({mode: "open"})
@@ -314,31 +390,15 @@
             if (!this.shadowRoot) {
                 this.attachShadow({mode: "open"})
             }
-            this.shadowRoot.innerHTML = `
-                <style>
-                    a {
-                        text-decoration: none;
-                        transition: all 0.3s;
-                        display: inline-block;
-                        padding: 8px 16px;
-                        color: var(--button-link-color, #000);
-                        border: 2px solid var(--button-link-border-color, #fff);
-                        border-radius: 8px;
-                    }
-                    
-                    a:hover {
-                        background-color: var(--button-link-hover-bg, #fff);
-                        color: var(--button-link-hover-color, #000);
-                    }
-                </style>
-                <a part="link" href="${link}" target="${target}">
-                    <slot></slot>
-                </a>
-            `
-
-            this.shadowRoot.querySelector('a')?.addEventListener('click', (e) => {
-                e.preventDefault()
-            })
+            this.shadowRoot.appendChild(LinkButton._template.content.cloneNode(true))
+            const elementLink = this.shadowRoot.querySelector('a')
+            if (elementLink) {
+                elementLink.setAttribute('href', link)
+                elementLink.setAttribute('target', target)
+                elementLink.addEventListener('click', (e) => {
+                    e.preventDefault()
+                })
+            }
         }
     }
 
